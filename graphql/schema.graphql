@@ -1,0 +1,54 @@
+"A datetime string with format `Y-m-d H:i:s`, e.g. `2018-01-01 13:00:00`."
+scalar DateTime @scalar(class: "Nuwave\\Lighthouse\\Schema\\Types\\Scalars\\DateTime")
+
+"A date string with format `Y-m-d`, e.g. `2011-05-23`."
+scalar Date @scalar(class: "Nuwave\\Lighthouse\\Schema\\Types\\Scalars\\Date")
+
+type Query {
+    users: [User!]! @paginate(defaultCount: 10)
+    user(id: ID @eq): User @find
+}
+
+type User {
+    id: ID!
+    name: String!
+    email: String!
+    created_at: DateTime!
+    updated_at: DateTime!
+}
+
+type Task {
+    id: ID!
+    name: String!
+    priority: Int!
+    has_done: Boolean!
+    created_at: DateTime!
+    updated_at: DateTime!
+}
+
+extend type Query {
+    tasks: [Task!]!
+}
+
+type Mutation {
+    createTask(name: String!, priority: Int!): Task!
+}
+
+extend type Mutation {
+    archieveTask(id: ID!): Task!
+}
+
+extend type Mutation {
+    deleteTask(id: ID!): Task!
+}
+
+input createTaskInput {
+    name: String!
+    priority: Int!
+}
+
+extend type Mutation {
+    createTasks(tasks: [createTaskInput!]!): [Task!]!
+}
+
+
