@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "97b36cb1b191b00c9d49fb43e45fe721",
+    "content-hash": "bac279d3abb43545952165d55131d2ae",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -102,6 +102,50 @@
                 "math"
             ],
             "time": "2020-02-17T13:57:43+00:00"
+        },
+        {
+            "name": "chatbox-inc/laravel-heroku",
+            "version": "0.0.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/chatbox-inc/laravel-heroku.git",
+                "reference": "a4cbaa89af31bb52446a61eb9419500d4f9d689a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/chatbox-inc/laravel-heroku/zipball/a4cbaa89af31bb52446a61eb9419500d4f9d689a",
+                "reference": "a4cbaa89af31bb52446a61eb9419500d4f9d689a",
+                "shasum": ""
+            },
+            "require": {
+                "php": "7.*"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Chatbox\\Heroku\\HerokuPostgresServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Chatbox\\Heroku\\": [
+                        "./src"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "mikakane",
+                    "email": "mikakane2@gmail.com"
+                }
+            ],
+            "time": "2020-03-30T02:12:20+00:00"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
